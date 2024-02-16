@@ -52,7 +52,7 @@ body{
     font-size: 15px;
     box-shadow: 3px 2px 4px rgba(12, 112, 242, 0.25);
 }
-:hover{
+button:hover{
     transform: translateY(-7px);
     transition-duration: 0.5s;
     background-color: #328fb8;
