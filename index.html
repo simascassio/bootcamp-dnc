@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp DNC - Inscrição</title> <!-- Título mais descritivo -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Estilo para sr-only -->
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho Principal -->
+    <header id="Principal">
+        <nav id="menu">
+           <a href="#">Home</a> <!-- Usar # como placeholder -->
+           <a href="#">Últimas Edições</a>
+           <a href="#">Requisitos para Participar</a>
+        </nav>
+        <button type="button">Login</button> <!-- Adicionado type="button" -->
+    </header>
+
+    <main>
+        <!-- Seção de Apresentação -->
+        <section class="hero-section">
+            <header>
+                <h1>BOOTCAMP DNC</h1>
+                <h2>
+                    Esse será um evento exclusivo para todos os alunos <br>
+                    da <b>DNC</b>, que querem <span class="invert"> acelerar a carreira</span> com uma <br>
+                    semana intensiva de conteúdo de mercado entre <br>
+                    <span class="invert">BACK-END, FRONT-END & BANCO DE DADOS.</span>
+                </h2>
+            </header>
+        </section>
+
+        <!-- Seção do Formulário de Inscrição -->
+        <section class="form-section">
+            <form action="#" method="post"> <!-- Action placeholder -->
+                <fieldset>
+                    <legend class="sr-only">Formulário de Inscrição</legend>
+
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Insira seu nome aqui" required autocomplete="given-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sobrenome">Sobrenome:</label>
+                        <input type="text" id="sobrenome" name="sobrenome" placeholder="Insira seu sobrenome aqui" required autocomplete="family-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Área de Interesse:</label>
+                        <div class="checkbox-itens">
+                            <input type="checkbox" id="front" name="interesse" value="front">
+                            <label for="front">Front-end</label>
+
+                            <input type="checkbox" id="back" name="interesse" value="back">
+                            <label for="back">Back-end</label>
+
+                            <input type="checkbox" id="dados" name="interesse" value="dados">
+                            <label for="dados">Banco de dados</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="Insira seu e-mail aqui" required autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" autocomplete="tel" pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}" title="Digite um telefone válido (Ex: (11) 98765-4321)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="frase">Insira uma frase criativa aqui:</label>
+                        <input type="text" id="frase" name="frase" placeholder="Qual frase criativa você gostaria de falar? :)">
+                    </div>
+
+                    <div class="submit-group">
+                        <input type="submit" value="Cadastrar">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="linha1">
+            <nav aria-labelledby="escolas-heading">
+                <h5 id="escolas-heading">Escolas</h5>
+                <ul>
+                    <li><a href="#">Formação em Tecnologia</a></li>
+                    <li><a href="#">Formação em Marketing</a></li>
+                    <li><a href="#">Formação em Dados</a></li>
+                    <li><a href="#">Formação em Projetos</a></li>
+                    <li><a href="#">Formação em Produto</a></li>
+                </ul>
+            </nav>
+            <nav aria-labelledby="sobre-dnc-heading">
+                <h5 id="sobre-dnc-heading">Sobre a DNC</h5>
+                <ul>
+                    <li><a href="#">História</a></li>
+                    <li><a href="#">Missão e Valores</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Conteúdo Gratuito</a></li>
+                </ul>
+            </nav>
+            <div class="endereco">
+                <p>© 2022 DTC Treinamentos & Consultoria LTDA</p>
+                <p>CNPJ: 27.995.577/0001-37</p>
+                <p>R. Justino Cobra, 61 – Vila Ema</p>
+                <p>São José dos Campos – SP | CEP 12243-030</p>
+            </div>
+        </div>
+        <div class="linha2">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Política de privacidade</a>
+        </div>
+    </footer>
+</body>
+</html>
+

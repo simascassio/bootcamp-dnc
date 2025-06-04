@@ -1,0 +1,470 @@
+:root {
+    --azul-dnc: #0c70f2;
+    --preto-dnc: #303030;
+    --cinza-hover: #c9c9c9;
+    --branco: #FFFFFF;
+    --cinza-claro: #f8f9fa; /* Para fundos de input */
+    --cinza-texto: #555;
+    --fonte-padrao: 'Inter', sans-serif; /* Adiciona fallback */
+}
+
+/* RESET BÁSICO E CONFIGURAÇÕES GLOBAIS */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, rgba(12, 112, 242, 0.5) 19.91%, rgba(12, 112, 242, 0) 24.88%), var(--preto-dnc);
+    background-repeat: no-repeat;
+    font-family: var(--fonte-padrao);
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Ocupa espaço disponível */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CLASSE UTILITÁRIA PARA ACESSIBILIDADE */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* CABEÇALHO PRINCIPAL */
+#Principal {
+    width: 100%;
+    min-height: 80px; /* Altura mínima */
+    background-color: var(--preto-dnc);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #BABABA;
+    padding: 10px 5%; /* Padding responsivo */
+    flex-wrap: wrap; /* Permite quebrar linha */
+    gap: 15px;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha */
+    gap: 25px; /* Espaçamento entre links */
+    justify-content: center; /* Centraliza em telas menores */
+}
+
+#menu a {
+    font-size: clamp(0.9rem, 2vw, 1.1rem); /* Fonte responsiva */
+    font-weight: 600;
+    color: var(--branco);
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--branco);
+    transition: width 0.3s ease;
+}
+
+#menu a:hover {
+    color: var(--cinza-hover);
+}
+
+#menu a:hover::after {
+    width: 100%;
+}
+
+#Principal button {
+    background-color: var(--azul-dnc);
+    border: none;
+    height: 40px;
+    width: 90px; /* Largura aumentada */
+    border-radius: 5px; /* Borda mais suave */
+    color: var(--branco);
+    cursor: pointer;
+    font-family: var(--fonte-padrao);
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 3px 2px 4px rgba(12, 112, 242, 0.25);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#Principal button:hover {
+    background-color: #0a58c3; /* Azul mais escuro no hover */
+    transform: translateY(-3px);
+}
+
+#Principal button:focus {
+    outline: 3px solid var(--azul-dnc);
+    outline-offset: 2px;
+}
+
+/* SEÇÃO HERO */
+.hero-section header {
+    color: var(--branco);
+    font-family: var(--fonte-padrao);
+    text-align: center;
+    padding: 60px 20px; /* Padding ajustado */
+    margin-bottom: 50px; /* Espaço antes do formulário */
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem); /* Fonte responsiva */
+    font-weight: 800; /* Mais peso */
+    margin-bottom: 30px;
+}
+
+.hero-section h2 {
+    font-size: clamp(1.2rem, 4vw, 1.875rem);
+    font-weight: 400; /* Peso normal */
+    line-height: 1.5;
+    max-width: 800px; /* Limita largura */
+    margin: 0 auto;
+}
+
+.hero-section .invert {
+    background-color: var(--branco); /* Fundo branco */
+    color: var(--preto-dnc); /* Texto preto */
+    font-weight: bold;
+    padding: 3px 8px; /* Padding ajustado */
+    border-radius: 4px;
+    white-space: nowrap; /* Evita quebra de linha */
+}
+
+/* SEÇÃO FORMULÁRIO */
+.form-section {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px 80px; /* Padding inferior aumentado */
+}
+
+form {
+    color: var(--branco);
+    font-family: var(--fonte-padrao);
+    font-size: 1rem; /* Tamanho base */
+    font-weight: 500;
+    width: 100%;
+    max-width: 600px; /* Largura máxima */
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
+    padding: 30px;
+    border-radius: 15px;
+}
+
+form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form label {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"] {
+    border-radius: 8px;
+    height: 45px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    padding: 0 15px;
+    background-color: var(--cinza-claro);
+    color: var(--preto-dnc);
+    font-family: inherit;
+    width: 100%; /* Ocupa largura total */
+}
+
+form input::placeholder {
+    color: var(--cinza-texto);
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--azul-dnc);
+    box-shadow: 0 0 0 2px rgba(12, 112, 242, 0.3);
+}
+
+/* Checkboxes */
+.checkbox-itens {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha */
+    gap: 15px 25px; /* Espaçamento vertical e horizontal */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-itens input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-right: 8px;
+    accent-color: var(--azul-dnc); /* Cor do check */
+    cursor: pointer;
+}
+
+.checkbox-itens label {
+    font-size: 0.95rem;
+    margin: 0;
+    cursor: pointer;
+    display: flex; /* Para alinhar com checkbox */
+    align-items: center;
+}
+
+/* Botão Submit */
+.submit-group {
+    margin-top: 40px;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: var(--azul-dnc);
+    width: 100%;
+    max-width: 250px;
+    height: 55px;
+    font-size: 1.2rem;
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 6px 4px rgba(12, 112, 242, 0.25);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0a58c3;
+    transform: translateY(-3px);
+}
+
+input[type="submit"]:focus {
+    outline: 3px solid var(--azul-dnc);
+    outline-offset: 2px;
+}
+
+/* RODAPÉ */
+footer {
+    width: 100%;
+    background-color: var(--azul-dnc);
+    color: var(--branco);
+    padding: 40px 0 10px; /* Padding ajustado */
+    margin-top: auto; /* Empurra para o final */
+}
+
+footer .linha1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Alinha no topo */
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px 30px; /* Padding inferior */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória */
+}
+
+footer nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+footer h5 {
+    color: var(--branco);
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: var(--fonte-padrao);
+    background-color: var(--preto-dnc);
+    border-radius: 10px;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    display: inline-block; /* Para ajustar ao conteúdo */
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 15px;
+}
+
+footer ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: var(--cinza-hover);
+}
+
+footer .endereco {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 300px; /* Limita largura */
+}
+
+footer .endereco p {
+    margin-bottom: 5px;
+}
+
+footer .linha2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px; /* Espaçamento vertical e horizontal */
+    padding: 15px 20px;
+}
+
+footer .linha2 a {
+    font-family: var(--fonte-padrao);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--branco);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+}
+
+footer .linha2 a:last-child {
+    border-right: none;
+}
+
+footer .linha2 a:hover {
+    color: var(--cinza-hover);
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 992px) {
+    #Principal {
+        justify-content: center;
+        text-align: center;
+    }
+    #menu {
+        width: auto; /* Ajusta largura */
+        margin-left: 0;
+        justify-content: center;
+    }
+    footer .linha1 {
+        align-items: center; /* Centraliza itens no tablet */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-section h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+    .hero-section h2 {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+    form {
+        width: 90%;
+        padding: 25px;
+    }
+    footer .linha1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px; /* Aumenta gap vertical */
+    }
+    footer nav {
+        height: auto; /* Altura automática */
+    }
+    footer .endereco {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #Principal {
+        padding: 15px;
+        min-height: 60px;
+    }
+    #menu {
+        gap: 15px;
+    }
+    #menu a {
+        font-size: 0.9rem;
+    }
+    #Principal button {
+        width: 70px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    .hero-section header {
+        padding: 40px 15px;
+    }
+    .form-section {
+        padding: 0 15px 60px;
+    }
+    form {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    form label {
+        font-size: 0.9rem;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"] {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    .checkbox-itens {
+        gap: 10px 15px;
+    }
+    .checkbox-itens label {
+        font-size: 0.9rem;
+    }
+    input[type="submit"] {
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    footer .linha2 a {
+        font-size: 0.85rem;
+        border-right: none; /* Remove borda no mobile */
+    }
+}
+
